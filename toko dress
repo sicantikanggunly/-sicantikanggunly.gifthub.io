@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+    .card:hover{
+      transform:translateY(-8px) scale(1.03);
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    footer{
+      background-color:var(--maroon);
+      color:var(--white);
+      text-align:center;
+      padding:15px;
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+  <header>👗 Bella Moda — Koleksi Gaun Eksklusif</header>
+
+  <div class="container" id="dressGrid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1080" alt="Gaun Merah Marun">
+      <div class="card-content">
+        <h3>Gaun Malam Merah Marun</h3>
+        <p>Gaun elegan dengan potongan modern dan bahan satin premium.</p>
+        <a href="#" class="btn">Lihat Detail</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3f38?q=80&w=1080" alt="Gaun Putih Mewah">
+      <div class="card-content">
+        <h3>Gaun Putih Mewah</h3>
+        <p>Cocok untuk pesta formal atau pernikahan dengan detail bordir halus.</p>
+        <a href="#" class="btn">Lihat Detail</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1582550945154-66ea8fff5297?q=80&w=1080" alt="Gaun Emas Glamour">
+      <div class="card-content">
+        <h3>Gaun Emas Glamour</h3>
+        <p>Menonjolkan kesan mewah dengan kilau elegan untuk malam spesial.</p>
+        <a href="#" class="btn">Lihat Detail</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542060748-10c28b62716a?q=80&w=1080" alt="Gaun Hitam Klasik">
+      <div class="card-content">
+        <h3>Gaun Hitam Klasik</h3>
+        <p>Simple dan timeless, sempurna untuk acara formal apa pun.</p>
+        <a href="#" class="btn">Lihat Detail</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>&copy; 2025 Bella Moda. Semua Hak Dilindungi.</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add("show");
+        }, index * 200);
+      });
+    });
+  </script>
+</body>
+</html>
