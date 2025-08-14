@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>World Jewels — Toko Perhiasan Serba Ada</title>
+  <meta name="description" content="World Jewels: perhiasan ternama serba ada. Didirikan oleh Keisya Putri. Cincin, kalung, anting, dan koleksi berlian." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <audio id="bgm" src="assets/bg.wav" loop></audio>
+  <header class="nav glass">
+    <div class="brand">
+      <img src="assets/favicon.svg" alt="World Jewels" class="logo"/>
+      <span>World Jewels</span>
+    </div>
+    <nav class="links">
+      <a href="#koleksi">Koleksi</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <div class="actions">
+      <button id="audioToggle" class="btn small" aria-label="Toggle Music">♫</button>
+      <button id="cartBtn" class="btn small">
+        <span class="cart-icon" aria-hidden="true"></span>
+        <span id="cartCount" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>World Jewels</h1>
+      <p>Toko perhiasan ternama serba ada oleh <strong>Keisya Putri</strong>.</p>
+      <div class="cta">
+        <a href="#koleksi" class="btn primary glow">Belanja Sekarang</a>
+        <button class="btn outline" id="muteHint">Matikan/Menyetel Musik</button>
+      </div>
+    </div>
+    <div class="slider" aria-label="Galeri">
+      <div class="slides">
+        <img src="assets/slide1.svg" alt="Koleksi cincin emas berkilau"/>
+        <img src="assets/slide2.svg" alt="Kalung berlian elegan"/>
+        <img src="assets/slide3.svg" alt="Anting emas klasik"/>
+      </div>
+      <button class="nav prev" aria-label="Sebelumnya">‹</button>
+      <button class="nav next" aria-label="Berikutnya">›</button>
+      <div class="dots" role="tablist" aria-label="Slide Selector"></div>
+    </div>
+  </section>
+
+  <main id="koleksi" class="catalog">
+    <h2>Koleksi Pilihan</h2>
+    <div class="grid" id="productGrid">
+      <!-- Produk akan di-render oleh JS -->
+    </div>
+  </main>
+
+  <section id="tentang" class="about">
+    <div class="about-card glass">
+      <h3>Tentang World Jewels</h3>
+      <p>Sejak awal, World Jewels berkomitmen menghadirkan kemewahan yang hangat, berkualitas tinggi, dan terjangkau. 
+      Setiap detail dibuat dengan teliti, agar Anda selalu tampil memesona.</p>
+    </div>
+  </section>
+
+  <section id="kontak" class="contact glass">
+    <h3>Butuh Bantuan?</h3>
+    <p>Hubungi kami di <a href="mailto:hello@worldjewels.example">hello@worldjewels.example</a> atau DM Instagram @worldjewels_official.</p>
+  </section>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> World Jewels. Dibangun dengan ♥ untuk Keisya Putri.</small>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Keranjang Belanja">
+    <div class="cart-header">
+      <h3>Keranjang</h3>
+      <button class="btn small" id="closeCart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="total-line">
+        <span>Total</span>
+        <strong id="cartTotal">Rp0</strong>
+      </div>
+      <button class="btn primary glow" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkoutModal" aria-hidden="true" role="dialog" aria-labelledby="checkoutTitle">
+    <div class="modal-card glass">
+      <div class="modal-head">
+        <h3 id="checkoutTitle">Checkout</h3>
+        <button class="btn small" id="closeModal">✕</button>
+      </div>
+      <form id="checkoutForm" class="form">
+        <label>Nama Lengkap<input required name="name" placeholder="Nama penerima"/></label>
+        <label>Email<input required type="email" name="email" placeholder="email@contoh.com"/></label>
+        <label>Alamat<input required name="address" placeholder="Alamat lengkap"/></label>
+        <label>Metode Pembayaran
+          <select name="payment" required>
+            <option value="">Pilih</option>
+            <option>Transfer Bank</option>
+            <option>Kartu Kredit/Debit</option>
+            <option>E-Wallet</option>
+            <option>COD</option>
+          </select>
+        </label>
+        <button class="btn primary glow" type="submit">Bayar Sekarang</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
